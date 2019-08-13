@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.AdminMainDao">
+	<!-- 已审核 -->
+	<select id="Audited" resultType="Integer"  parameterType="Integer">
+		SELECT SUM(CNT) FROM (
+			select COUNT(1) CNT FROM achievements where examine = "1"
+			union all
+			select COUNT(1) CNT FROM worksmaterial where examine = "1"
+			union all
+			select COUNT(1) CNT FROM paper where examine = "1"
+			union all
+			select COUNT(1) CNT FROM project where examine = "1"
+			union all
+			select COUNT(1) CNT FROM patent where examine = "1"
+			) as Audited
+	</select>
+	
+	<!-- 未审核 -->
+	<select id="notAudited" resultType="Integer"  parameterType="Integer">
+		SELECT SUM(CNT) FROM (
+			select COUNT(1) CNT FROM achievements where examine = "0" 
+			union all
+			select COUNT(1) CNT FROM worksmaterial where examine = "0"
+			union all
+			select COUNT(1) CNT FROM paper where examine = "0" 
+			union all
+			select COUNT(1) CNT FROM project where examine = "0"
+			union all
+			select COUNT(1) CNT FROM patent where examine = "0"
+			) as notAudited
+	</select>
+	
+	<!-- 个人成果总数 -->
+	<select id="allResults" resultType="Integer" >
+		SELECT SUM(CNT) FROM (
+			select COUNT(1) CNT FROM achievements
+			union all
+			select COUNT(1) CNT FROM worksmaterial 
+			union all
+			select COUNT(1) CNT FROM paper
+			union all
+			select COUNT(1) CNT FROM project
+			union all
+			select COUNT(1) CNT FROM patent
+			) as allResults
+	</select>
+	
+	<!-- 教师总数 -->
+	<select id="allTeacher" resultType="Integer" >
+		select count(*) from teacher
+	</select>
+	
+	<!-- 分类查询 -->
+	<select id="workQueryAll" resultType="map" >
+		select *,tname from worksMaterial,teacher where teacher.tid = worksMaterial.tid
+	</select>
+	<select id="paperQueryAll" resultType="map">
+		select *,tname from paper,teacher where teacher.tid = paper.tid
+	</select>
+	<select id="projectQueryAll" resultType="map">
+		select *,tname from project,teacher where teacher.tid = project.tid
+	</select>
+	<select id="patentQueryAll" resultType="map">
+		select *,tname from patent,teacher where teacher.tid = patent.tid
+	</select>
+	<select id="achieveQueryAll" resultType="map">
+		select *,tname from achievements,teacher where teacher.tid = achievements.tid
+	</select>
+	
+	<!-- 查询全部教师 -->
+	<select id="showTeacherAll" resultType="Tuser">
+		select * from teacher
+	</select>
+	
+	<!-- 添加教师 -->
+	<select id="addTeacher" parameterType="Tuser" resultType="Tuser">
+		insert into teacher(tno,tpasswd,tname,position,inTime)
+		value (#{tno},#{tpasswd},#{tname},#{position},now())		
+	</select>
+</mapper>

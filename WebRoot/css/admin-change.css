@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.reset-btn{
+    background-color: #FF5722;
+    border-color: #FF5722;
+}
+
+.reset-btn:hover{
+    background-color: #be4621;
+    border-color: #be4621;
+}
+
+.page-header-heading-icon{
+	margin-right: 8px;
+}

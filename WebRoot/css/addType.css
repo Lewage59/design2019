@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.tyle-content{
+	padding: 8em 0em 30em;
+}
+
+.tyle-content .navbar{
+	height: 0px;
+}
+
+.form-horizontal .form-group {
+	margin-right: 0px;
+    margin-left: 0px;
+}
+
+.tyle-content .layui-form-label{
+	width: 190px;
+}
+
+.layui-form-select dl dd.layui-this{
+	background-color: #2196f3;
+}
+
+.tyle-content .layui-input-block {
+    margin-left: 200px;
+}
+
+.tyle-content .type-sb-btn{
+	height: 40px;
+	padding: 0 30px;
+	background-color: #138ff1;
+}
+

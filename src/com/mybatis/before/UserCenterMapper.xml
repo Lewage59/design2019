@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserCenterDao">
+	<!-- 个人信息查询 -->
+	<select id="userCenter" resultType="Tuser"  parameterType="Integer">
+		select * from teacher where tid=#{bid} 
+	</select>
+	
+	<!-- 修改个人信息 -->
+	<select id="alterInfo" resultType="Tuser"  parameterType="Tuser">
+		update teacher set tname=#{tname},tpasswd=#{tpasswd},position=#{position} where tid=#{tid}
+	</select>
+	
+	<!-- 分类查询 -->
+	<select id="workQuery" resultType="map"  parameterType="Integer">
+		select * from worksMaterial where tid=#{tid} 
+	</select>
+	<select id="paperQuery" resultType="map"  parameterType="Integer">
+		select * from paper where tid=#{tid} 
+	</select>
+	<select id="projectQuery" resultType="map"  parameterType="Integer">
+		select * from project where tid=#{tid} 
+	</select>
+	<select id="patentQuery" resultType="map"  parameterType="Integer">
+		select * from patent where tid=#{tid} 
+	</select>
+	
+	<!-- 个人成就查询 -->
+	<select id="achieveQuery" resultType="map"  parameterType="Integer">
+		select * from achievements where tid=#{tid} 
+	</select>
+	
+	<!-- 已审核 -->
+	<select id="Audited" resultType="Integer"  parameterType="Integer">
+		SELECT SUM(CNT) FROM (
+			select COUNT(1) CNT FROM achievements where examine = "1" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM worksmaterial where examine = "1" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM paper where examine = "1" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM project where examine = "1" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM patent where examine = "1" and tid=#{tid}
+			) as Audited
+	</select>
+	
+	<!-- 未审核 -->
+	<select id="notAudited" resultType="Integer"  parameterType="Integer">
+		SELECT SUM(CNT) FROM (
+			select COUNT(1) CNT FROM achievements where examine = "0" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM worksmaterial where examine = "0" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM paper where examine = "0" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM project where examine = "0" and tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM patent where examine = "0" and tid=#{tid}
+			) as notAudited
+	</select>
+	
+	<!-- 个人成果总数 -->
+	<select id="allResults" resultType="Integer"  parameterType="Integer">
+		SELECT SUM(CNT) FROM (
+			select COUNT(1) CNT FROM achievements where tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM worksmaterial where tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM paper where tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM project where tid=#{tid}
+			union all
+			select COUNT(1) CNT FROM patent where tid=#{tid}
+			) as allResults
+	</select>
+</mapper>

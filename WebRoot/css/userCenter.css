@@ -1,0 +1,192 @@
+@CHARSET "UTF-8";
+
+#content {
+    padding-top: 15px;
+}
+/*导航*/
+.account-container {
+    display: table;
+}
+
+.account-avatar {
+    padding-right: 1em;
+}
+
+.account-avatar, .account-details {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.account-avatar img {
+    width: 70px;
+    height: 70px;
+}
+
+.account-details .account-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.account-details span {
+    display: block;
+    margin: 3px 0px;
+}
+
+.account-details .account-role {
+    color: #888;
+}
+
+.user_c{
+	margin-top: 10px;
+}
+
+.user-c-nav > li > a{
+	height: 45px;
+    padding: 14px 15px;
+    color: hsl(0, 0%, 35%);
+    background-color: rgba(158, 158, 158, 0.05);
+    border: 1px solid #ddd;
+}
+
+.user-c-nav > li.active > a, .user-c-nav > li.active > a:hover, .user-c-nav > li.active > a:focus {
+    color: #fff;
+    background-color: #2196F3;
+}
+
+.user-c-nav > li + li {
+    margin-top: 3px;
+    margin-left: 0;
+}
+
+.user-c-nav .glyphicon{
+	margin:0px 5px;
+	margin-right:10px;
+}
+
+/*内容*/
+.page-title {
+    padding: 15px 10px;
+    height: 50px;
+    margin-bottom: 1.25em;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: #009688;
+    border-radius: 4px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+.widget {
+    position: relative;
+    clear: both;
+    width: auto;
+    margin-bottom: 2em;
+}
+
+.widget-header {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #d5d5d5;
+    background: -webkit-linear-gradient(top,#FAFAFA 0%,#E9E9E9 100%);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.widget-header h3 {
+    position: relative;
+    left: 10px;
+    display: inline-block;
+    margin-right: 3em;
+    font-size: 14px;
+    color: #555;
+    line-height: 18px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,.5);
+}
+
+.widget-header+.widget-content {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.widget-content {
+    padding: 0;
+}
+
+.widget-content-info {
+    padding: 20px 15px 15px;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.widget-table .table {
+    margin-bottom: 0;
+    border: 0;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    text-align: center;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: inherit;
+    border-top: 1px solid #ddd;
+}
+
+
+/*修改*/
+.my-content{
+	
+}
+
+.my-content .container{
+	padding: 10em 0em 30em;
+}
+
+.page-title{
+	background: #03A9F4;
+}
+
+.widget-content {
+    padding-top: 1em;
+}
+
+.widget-content-info{
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.account-details .account-name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+label{
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.account-details span{
+	margin-bottom: 10px;
+}
+
+.counter-wthree-list {
+    background: #f7f7f7;
+    border: 1px solid rgba(204, 204, 204, 0.3);
+    border-radius: 10px;
+}
+
+.my-content .mydata{
+	padding-bottom: 10px;
+}
+
+.gain-img{
+	height:50px;
+	width:50px;
+}
+
+
+

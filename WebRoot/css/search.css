@@ -1,0 +1,86 @@
+@charset "utf-8";
+.pb-3, .py-3 {
+    padding-bottom: 1rem!important;
+    padding-top: 1rem!important;
+}
+
+.inner_page-banner {
+	min-height: 300px;
+}
+
+.page-name h5 {
+	font-size: 80px;
+}
+
+ul.short_ls li{
+	color: #6f6f6f;
+}
+
+ul.short_ls li a {
+	color: #2196F3;
+}
+
+.type-lz-content{
+	margin-top: 30px;
+	padding: 0em 0em 5em;
+}
+
+.type-lz-content img{
+	height: 250px;
+    width: 250px;
+}
+
+.type-lhz-content{
+	padding: 0em 0em 5em;
+}
+
+.type-lhz-content img{
+	height: 100px;
+}
+
+.type-lhz-content .ct-alist{
+	margin-top: 20px;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    transition: all 0.1s ease-in;
+}
+
+.type-lhz-content .ct-alist:hover{
+	border-color: rgba(158, 158, 158, 0.50);
+}
+
+.type-lhz-content .media-heading{
+	font-size: 20px;
+	color: #337ab7;
+	font-weight: 600;
+}
+
+.type-lhz-content .the-content{
+	color: #969696;
+}
+
+.type-lhz-content .media-right{
+	width: 15%;
+	position: relative;
+    top: 30px;
+}
+
+.type-lz-content p{
+	margin: 5px 0px;
+	color: #9E9E9E;
+}
+
+.type-lz-content .thumbnail {
+    height: 400px;
+}
+
+.page-name h5 {
+    font-size: 80px;
+}
+
+.page-name h5 {
+    font-size: 95px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}

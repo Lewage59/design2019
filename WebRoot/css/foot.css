@@ -1,0 +1,95 @@
+@charset "utf-8";
+.foot-bottom{
+	background: #000;
+	overflow: hidden;
+	height: 150px;
+	position: relative;
+}
+
+.foot-bottom .foot-content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 800px;
+	overflow: hidden;
+}
+
+.foot-first-row{
+	width: 100%;
+	text-align: center;
+}
+
+.foot-first-row .row {
+	color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.foot-second-row{
+	margin: 15px auto 0;
+    text-align: center;
+}
+
+.foot-second-info{
+	display: block;
+	text-align: left;
+	margin-bottom: 5px;
+	padding-left: 15px;
+}
+
+.foot-second-row .foot-second-info span{
+	height: 15px;
+    border-left: 1px solid #fff;
+    margin: 0 40px;
+}
+
+.foot-second-row .foot-second-info a{
+	color: #fff;
+	text-decoration: none;
+}
+
+/* 小屏幕（大于等于 768px） */
+@media (min-width: 768px) {
+	.foot-bottom {
+		height: 200px;
+	}
+	.foot-content {
+		width: 75%;
+	}
+	.foot-second-row{
+		text-align: center;
+		margin-top: 40px;
+	}
+	.foot-second-info span {
+		margin: 0 15px;
+	}
+	.foot-second-info{
+		display: inline;
+		padding-left: 0;
+		margin-bottom: 0;
+	}
+}
+/* 中等屏幕（大于等于 992px） */
+@media (min-width: 992px) {
+	.foot-bottom {
+		height: 180px;
+	}
+	.foot-content {
+		width: 80%;
+	}
+	.foot-first-row {
+		width: 85%
+	}
+	.foot-second-info span{
+		margin: 0 30px;
+	}
+
+}
+/* 大屏幕（大于等于 1200px） */
+@media (min-width: 1200px) {
+	.bottomCon {
+		width: 65%;
+	}
+}

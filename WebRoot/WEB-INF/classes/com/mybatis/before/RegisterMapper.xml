@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.RegisterDao">
+
+	<select id="workInsert" parameterType="Wmaterial" resultType="Wmaterial">
+		insert into worksmaterial(tid,bname,author,pressName,information,edition,catalog,cover,prizeWin,pTime)
+		value (#{tid},#{bname},#{author},#{pressName},#{information},#{edition},#{catalog},#{cover},#{prizeWin},now())		
+	</select>
+	<select id="paperInsert" parameterType="Paper" resultType="Paper">
+		insert into paper(tid,author,subject,time,catalog,cover,magazineName,edition,pcategory,examine,text)
+		value (#{tid},#{author},#{subject},now(),#{catalog},#{cover},#{magazineName},#{edition},#{pcategory},#{examine},#{text})		
+	</select>
+	<select id="projectInsert" parameterType="Project" resultType="Project">
+		insert into project(tid,host,pName,declaration,prove,time,level,participant,examine,itemCategory)
+		value (#{tid},#{host},#{pName},#{declaration},#{prove},now(),#{level},#{participant},#{examine},#{itemCategory})		
+	</select>
+	<select id="patentInsert" parameterType="Patent" resultType="Patent">
+		insert into patent(tid,pName,level,time,certificate,host,participant,examine)
+		value (#{tid},#{pName},#{level},now(),#{certificate},#{host},#{participant},#{examine})		
+	</select>
+	<select id="achieveInsert" parameterType="Achievements" resultType="Achievements">
+		insert into achievements(tid,aName,level,getTime,certificate,examine)
+		value (#{tid},#{aName},#{level},now(),#{certificate},#{examine})		
+	</select>
+
+</mapper>

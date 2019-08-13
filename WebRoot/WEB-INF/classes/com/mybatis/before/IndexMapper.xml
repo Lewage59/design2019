@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IndexDao">
+
+	<select id="countWsmaterial" resultType="Integer">
+		select count(*) from worksmaterial
+	</select>
+	<select id="countPaper" resultType="Integer">
+		select count(*) from paper 
+	</select>
+	<select id="countProject" resultType="Integer">
+		select count(*) from project 
+	</select>
+	<select id="countPatent" resultType="Integer">
+		select count(*) from patent
+	</select>
+	
+	<!-- 分类查询 -->
+	<select id="workQueryAll" resultType="map" >
+		select * from worksMaterial
+	</select>
+	<select id="paperQueryAll" resultType="map">
+		select * from paper
+	</select>
+	<select id="projectQueryAll" resultType="map">
+		select * from project 
+	</select>
+	<select id="patentQueryAll" resultType="map">
+		select * from patent 
+	</select>
+	<select id="achieveQueryAll" resultType="map">
+		select * from achievements
+	</select>
+	
+	<!-- 单个查询 -->
+	<select id="singleAchieveQuery" resultType="Achievements" parameterType="Integer">
+		select * from Achievements where wid = ${id}
+	</select>
+	<select id="singlePaperQuery" resultType="Paper" parameterType="Integer">
+		select * from Paper where pid = ${id}
+	</select>
+	<select id="singlePatentQuery" resultType="Patent" parameterType="Integer">
+		select * from Patent where pid = ${id}
+	</select>
+	<select id="singleProjectQuery" resultType="Project" parameterType="Integer">
+		select * from Project where pid = ${id}
+	</select>
+	<select id="singleWmaterialQuery" resultType="Wmaterial" parameterType="Integer">
+		select * from worksMaterial where wid = ${id}
+	</select>
+	
+	<!-- 查询教师名字 -->
+	<select id="getTeacherName" resultType="String" parameterType="Integer">
+		select tname from teacher where tid = ${id}
+	</select>
+	
+</mapper>
